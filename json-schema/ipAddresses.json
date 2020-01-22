@@ -1,0 +1,33 @@
+{
+  "$id": "ipAddresses",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IP Addresses",
+  "description": "IP Address parameters and returned data.",
+  "definitions": {
+    "ipv4CIDR": {
+        "type": "string",
+        "description": "An IPv4 subnet expressed in CIDR notation."
+        "examples": [ "172.16.10.0/24", "192.168.1.216/30" ]
+    },
+    "hostIpv4AndIpv6Address": {
+      "type": "object",
+      "description": "An object holding a host's IPv4 and IPv6 addresses.",
+      "required": [
+        "ipv4",
+        "ipv6"
+      ],
+      "properties": {
+        "ipv4": {
+          "type": "string",
+          "description": "An IPv4 host address in dotted-quad decimal format.",
+          "default": ""
+        },
+        "ipv6": {
+          "type": "string",
+          "description": "An IPv4-encapsulated IPv6 host address.",
+          "default": ""
+        }
+      }
+    }
+  }
+}
