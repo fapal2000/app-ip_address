@@ -1,27 +1,15 @@
+module.js:550
+    throw err;
+    ^
 
---- Test Number 1 getFirstIpAddress(172.16.10.0/24) ---
-Response returned from GET request: {"ipv4":"172.16.10.1","ipv6":"0:0:0:0:0:ffff:ac10:0a01"}
-
---- Test Number 2 getFirstIpAddress(172.16.10.0 255.255.255.0) ---
-Error returned from GET request: Error: Invalid CIDR passed to getFirstIpAddress.
-
---- Test Number 3 getFirstIpAddress(172.16.10.128/25) ---
-Response returned from GET request: {"ipv4":"172.16.10.129","ipv6":"0:0:0:0:0:ffff:ac10:0a81"}
-
---- Test Number 4 getFirstIpAddress(192.168.1.216/30) ---
-Response returned from GET request: {"ipv4":"192.168.1.217","ipv6":"0:0:0:0:0:ffff:c0a8:01d9"}
-
---- Test Number 1 getIpv4MappedIpv6Address(172.16.10.1) ---
-  IPv4 172.16.10.1 mapped to IPv6 Address: 0:0:0:0:0:ffff:ac10:0a01
-
---- Test Number 2 getIpv4MappedIpv6Address(172.16.10.0/24) ---
-  Problem converting IPv4 172.16.10.0/24 into a mapped IPv6 address.
-
---- Test Number 3 getIpv4MappedIpv6Address(172.16.10.0 255.255.255.0) ---
-  Problem converting IPv4 172.16.10.0 255.255.255.0 into a mapped IPv6 address.
-
---- Test Number 4 getIpv4MappedIpv6Address(172.16.256.1) ---
-  Problem converting IPv4 172.16.256.1 into a mapped IPv6 address.
-
---- Test Number 5 getIpv4MappedIpv6Address(1.1.1.-gi1) ---
-  Problem converting IPv4 1.1.1.-gi1 into a mapped IPv6 address.
+Error: Cannot find module './ipv6.js'
+    at Function.Module._resolveFilename (module.js:548:15)
+    at Function.Module._load (module.js:475:25)
+    at Module.require (module.js:597:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (/opt/pronghorn-workspace/app-ip_address/main.js:8:14)
+    at Module._compile (module.js:653:30)
+    at Object.Module._extensions..js (module.js:664:10)
+    at Module.load (module.js:566:32)
+    at tryModuleLoad (module.js:506:12)
+    at Function.Module._load (module.js:498:3)
